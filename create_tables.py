@@ -18,7 +18,7 @@ def drop_tables(cur, conn):
             cur.execute(query)
             conn.commit()
         except psycopg2.Error as e:
-            print("Error: Issue dropping table: " + query)
+            print(f"Error: Issue dropping table: {query}")
             print(e)
 
     print("Tables dropped successfully.")
@@ -39,7 +39,7 @@ def create_tables(cur, conn):
             cur.execute(query)
             conn.commit()
         except psycopg2.Error as e:
-            print("Error: Issue creating table: " + query)
+            print(f"Error: Issue creating table: {query}")
             print(e)
     print("Tables created successfully.")
 
