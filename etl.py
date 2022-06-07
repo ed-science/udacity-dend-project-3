@@ -20,11 +20,11 @@ def load_staging_tables(cur, conn):
 
     for query in copy_table_queries:
         print('------------------')
-        print('Processing query: {}'.format(query))
+        print(f'Processing query: {query}')
         cur.execute(query)
         conn.commit()
         print('------------------')
-        print('{} processed OK.'.format(query))
+        print(f'{query} processed OK.')
 
     print('All files COPIED OK.')
 
@@ -48,10 +48,10 @@ def insert_tables(cur, conn):
     print("Start inserting data from staging tables into analysis tables...")
     for query in insert_table_queries:
         print('------------------')
-        print('Processing query: {}'.format(query))
+        print(f'Processing query: {query}')
         cur.execute(query)
         conn.commit()
-        print('{} processed OK.'.format(query))
+        print(f'{query} processed OK.')
 
     print('All files INSERTED OK.')
 
